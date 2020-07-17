@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+}
+
+#mainlogo {
+    width: 30%;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+h2 {
+    flex-basis: 100%;
+    text-align: center;
+    background-color: #707070;
+    color: #FFCD01;
+}
+
+.weathers {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: .5em 0;
+    margin: .5em 0;
+    clear: both;
+}
+
+h4 {
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.mainimage {
+    width: 100%;
+}
+
+h3 {
+    background-color: #707070;
+    color: #FFCD01;
+    text-align: center;
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: 8px 0;
+}
+
+.abouth3 {
+    background-color: #FFCD01;
+    color: black;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#maincontain {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.yellowback {
+    background-color: #FFCD0130;
+}
+
+#subhead {
+    margin: 10px auto;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.3em;
+    flex-basis: 100%;
+}
+
+.membinfo {
+    background-color: #FF453340;
+    margin: 0 10px 20px;
+}
+
+.membinfo p {
+    padding: 10px;
+    line-height: 1.8em;
+}
+
+.memberinfoh3 {
+    color: #FF4533;
+    background-color: unset;
+    text-transform: unset;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+footer {
+    background-color: #707070;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.formcont {
+    min-width: 50%;
+}
+
+.joinform {
+    background-color: #FFCD0170;
+    width: 96%;
+    padding: 2%;
+    clear: both;
+}
+
+.textfield {
+    margin: 1px 0 18px 0;
+    width: 95%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #70707030;
+    padding: 0 10px;
+    height: 40px;
+}
+
+.buttons {
+    text-transform: uppercase;
+    width: 12em;
+    height: 53px;
+    font-size: 1em;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: #FF4533;
+    border-radius: 31px;
+    margin-bottom: 20px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.membinfo h3,
+.formcont h3 {
+    background-color: unset;
+    font-weight: 600;
+    text-transform: unset;
+}
+
+.membinfo h3 {
+    color: #FF4533;
+    font-size: 1.2em;
+}
+
+.formcont h3 {
+    background-color: #FFCD0170;
+    color: #707070;
+    font-size: 1.4em;
+    text-transform: capitalize;
+    padding: 5px 5px;
+    border-radius: 18px;
+}
+
+
+/* ----------Media Queries -----------------------------------*/
+
+
+/* Media Query 320px */
+
+@media (min-width: 320px) {
+    #maincontain,
+    .maincontainabout {
+        flex-flow: column;
+    }
+    #maincontain article,
+    .aboutarticle {
+        /* width: 100%; */
+        margin: 10px;
+    }
+    #maincontain article p,
+    .aboutarticle p {
+        font-size: .7em;
+        line-height: 1.8em;
+        padding: 0 2em;
+    }
+    .maincontainabout .aboutarticle {
+        width: 95%;
+    }
+    .mainimage {
+        width: 100%;
+        object-fit: contain;
+    }
+    .mobilemenu {
+        font-size: 2em;
+        position: absolute;
+        float: right;
+        right: 3%;
+        top: 3%;
+    }
+    ul {
+        display: none;
+    }
+}
+
+
+/* Media Query 768px */
+
+@media (min-width: 768px) {
+    .mobilemenu {
+        display: none;
+    }
+    ul {
+        display: inline-block;
+    }
+    #mainlogo {
+        float: left;
+    }
+    header {
+        clear: both;
+    }
+    nav {
+        float: right;
+        margin-top: 148px;
+    }
+    li {
+        width: 8em;
+        text-align: right;
+        padding-right: 2em;
+        font-weight: 600;
+    }
+    li a {
+        text-decoration: none;
+        color: #707070;
+        transition: 2s;
+    }
+    li a:hover {
+        text-decoration: overline;
+        font-weight: 700;
+        color: #FFCD01;
+        transition: .5s;
+        margin-right: 20px;
+    }
+    .mainimage {
+        height: 360px;
+        object-fit: cover;
+    }
+    #maincontain .aboutarticle {
+        width: 80%;
+    }
+    #maincontain {
+        flex-flow: row;
+        justify-content: space-between;
+    }
+}
+
+
+/* Media Query 1000px */
