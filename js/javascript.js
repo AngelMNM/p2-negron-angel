@@ -14,14 +14,15 @@ ddMenu.addEventListener('click',
 );
 
 //********* Accordions
-//variables that are or might be needed I think
-// var accordionArticle = document.getElementsByClassName("aboutarticle");
-// var accordionText = document.getElementsByClassName("aboutarticleText");
-var accordionHead = document.getElementsByClassName("h3about");
+
+// ---------------------------------------  Rewrite
+// select all h3 headers 
+var accordionHead = document.querySelectorAll(".h3about");
+// select all text boxes under h3
+var accordionText = document.querySelectorAll(".aboutarticleText");
 
 for (i = 0; i < accordionHead.length; i++) {
     accordionHead[i].addEventListener('click', function() {
-
         console.log('This is kind of working');
         this.classList.toggle("aboutarticletext");
 
@@ -31,8 +32,36 @@ for (i = 0; i < accordionHead.length; i++) {
             // nextelement.style.transition = "2s";
         } else {
             nextelement.style.display = "block";
-
         }
-
     })
-}
+};
+
+
+// Popup Ad
+//get ad and set it to a variable
+var ad = document.getElementById("popupAd");
+
+
+//set popup ad to visible
+function timerVisible() {
+    ad.style.display = "block"
+};
+
+//set popup ad to invisible
+function timerInVisible() {
+    ad.style.display = "none"
+};
+
+
+timerInVisible();
+setTimeout(timerVisible, 10000);
+setTimeout(timerInVisible, 7000);
+
+
+// function popupOff() {
+//     var1 = setTimeout(function() { ad.style.display = "block" }, 5000);
+//     var2 = setTimeout(function() { ad.style.display = "none" }, 5000);
+
+// };
+
+// popupOff(var1, var2);
