@@ -46,7 +46,7 @@ h2 {
     color: #FFCD01;
 }
 
-.weathers {
+#weathers {
     background-color: black;
     color: #ffffff;
     display: flex;
@@ -55,6 +55,12 @@ h2 {
     padding: .5em 0;
     margin: .5em 0;
     clear: both;
+}
+
+#weathers p span {
+    font-size: large;
+    font-weight: 600;
+    color: #FFCD01;
 }
 
 h4 {
@@ -207,8 +213,6 @@ footer {
     font-size: 1.5em;
     text-align: center;
 }
-
-#popupAd p {}
 
 #popupAd button {
     width: 132px;

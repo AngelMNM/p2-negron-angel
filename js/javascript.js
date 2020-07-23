@@ -15,7 +15,6 @@ ddMenu.addEventListener('click',
 
 //********* Accordions
 
-// ---------------------------------------  Rewrite
 // select all h3 headers 
 var accordionHead = document.querySelectorAll(".abouth3");
 // select all text boxes under h3
@@ -37,14 +36,17 @@ for (i = 0; i < accordionHead.length; i++) {
 };
 
 
-// Popup Ad
+// ****************************** Popup Ad
 //get ad and set it to a variable
 var ad = document.getElementById("popupAd");
 
 
-//set popup ad to visible
+//set popup ad to visible, unless it is the Join page
 function timerVisible() {
-    ad.style.display = "block"
+    ad.style.display = "block";
+    if (document.getElementsByTagName("title")[0].innerHTML === "Round Valley Trout Association - Join") {
+        ad.style.display = "none"
+    }
 };
 
 //set popup ad to invisible
@@ -54,14 +56,42 @@ function timerInVisible() {
 
 
 timerInVisible();
-setTimeout(timerVisible, 10000);
+setTimeout(timerVisible, 9000);
 setTimeout(timerInVisible, 7000);
 
 
-// function popupOff() {
-//     var1 = setTimeout(function() { ad.style.display = "block" }, 5000);
-//     var2 = setTimeout(function() { ad.style.display = "none" }, 5000);
 
-// };
+//***********************Weather API****************************** */
+//get pull data from free ACCuweather API and place results in weather section
 
-// popupOff(var1, var2);
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var apiResult = JSON.parse(this.responseText);
+
+
+        //variables from API
+        var temperature = apiResult[0].Temperature.Imperial.Value;
+        var covering = apiResult[0].WeatherText;
+        console.log(covering + "  " + temperature);
+
+
+        //Node Elements from HTML
+        var weatherSection = document.getElementById('weathers');
+        var temperatureText = weatherSection.getElementsByTagName('p')[0];
+        var typeofCover = weatherSection.getElementsByTagName('p')[1];
+
+        //create new text nodes to place
+        var newTextTemp = document.createTextNode(temperatureText);
+        var newCover = document.createTextNode(typeofCover);
+        var spanTag = document.createElement('SPAN');
+        var spanTag2 = document.createElement('SPAN');
+
+        // test new tag
+        temperatureText.appendChild(spanTag).innerHTML = temperature + "F";
+        typeofCover.appendChild(spanTag2).innerHTML = covering;
+
+    }
+};
+xmlhttp.open('GET', 'http://dataservice.accuweather.com/currentconditions/v1/3288_PC?apikey=Im2che9xPgrTNtPH4sY4qOiK93fVAoRy', true);
+xmlhttp.send();
