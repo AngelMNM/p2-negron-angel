@@ -17,7 +17,7 @@ ddMenu.addEventListener('click',
 
 // ---------------------------------------  Rewrite
 // select all h3 headers 
-var accordionHead = document.querySelectorAll(".h3about");
+var accordionHead = document.querySelectorAll(".abouth3");
 // select all text boxes under h3
 var accordionText = document.querySelectorAll(".aboutarticleText");
 
