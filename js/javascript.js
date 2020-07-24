@@ -15,7 +15,7 @@ ddMenu.addEventListener('click',
 
 //********* Accordions
 
-// select all h3 headers 
+// select all h3 headers
 var accordionHead = document.querySelectorAll(".abouth3");
 // select all text boxes under h3
 var accordionText = document.querySelectorAll(".aboutarticleText");
@@ -51,13 +51,20 @@ function timerVisible() {
 
 //set popup ad to invisible
 function timerInVisible() {
+
     ad.style.display = "none"
+
+
 };
 
-
+//makes sure ad is invisible immediately as page loads
 timerInVisible();
+
+//makes popup ad visible after 9 secs from page load
 setTimeout(timerVisible, 9000);
-setTimeout(timerInVisible, 7000);
+
+//makes popup invisible again after 18 secs from page load (9 secs of visibility) *took me forever to figue this one out, but i did it :)
+setTimeout(timerInVisible, 18000);
 
 
 
